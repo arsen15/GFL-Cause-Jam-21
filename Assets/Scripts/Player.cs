@@ -14,8 +14,13 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     public Transform feetPos;
     public float groundCheckCircle;
+    private bool facingRight;
 
-    
+    public float knockBackForce;
+    public float knockBackCounter;
+    public float knockBackTotalTime;
+
+    public bool knockFromRight;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +33,13 @@ public class Player : MonoBehaviour
     {
         input = Input.GetAxisRaw("Horizontal");
 
-        if (input < 0)
+        if (input < 0 && !facingRight)
         {
-            spriteRenderer.flipX = true;
-        } else if (input > 0)
+            Flip();
+        } else if (input > 0 && facingRight)
         {
-            spriteRenderer.flipX = false;
+            //spriteRenderer.flipX = false;
+            Flip();
         }
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, groundCheckCircle, groundLayer);
@@ -48,7 +54,31 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRb.velocity = new Vector2(input * speed, playerRb.velocity.y);
+        if (knockBackCounter <= 0)
+        {
+            playerRb.velocity = new Vector2(input * speed, playerRb.velocity.y);
+        }
+        else
+        {
+            if (knockFromRight == true)
+            {
+                playerRb.velocity = new Vector2(-knockBackForce, knockBackForce);
+            }
+
+            if (knockFromRight == false)
+            {
+                playerRb.velocity = new Vector2(knockBackForce, knockBackForce);
+            }
+
+            knockBackCounter -= Time.deltaTime;
+        }
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+
+        transform.Rotate(0f, 180f, 0f);
     }
 
     

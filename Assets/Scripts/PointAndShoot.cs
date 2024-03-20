@@ -8,7 +8,7 @@ public class PointAndShoot : MonoBehaviour
     public GameObject crosshairs;
     public GameObject playerBulletPrefab;
     public float playerBulletSpeed = 50.0f;
-    public GameObject BulletStart;
+    public Transform BulletStart;
 
     private Vector3 target;
     private bool canFire = true;
@@ -31,7 +31,7 @@ public class PointAndShoot : MonoBehaviour
             float distance = difference.magnitude;
             Vector2 direction = difference / distance;
             direction.Normalize();
-            fireBullet(direction, rotationZ);
+            FireBullet(direction, rotationZ);
             canFire = false; // Prevent firing until the mouse button is released
         }
 
@@ -41,11 +41,19 @@ public class PointAndShoot : MonoBehaviour
         }
     }
 
-    void fireBullet(Vector2 direction, float rotationZ)
+    void FireBullet(Vector2 direction, float rotationZ)
     {
         GameObject b = Instantiate(playerBulletPrefab) as GameObject;
-        b.transform.position = BulletStart.transform.position;
+        b.transform.position = BulletStart.position;
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+
+        if (player.transform.localScale.x < 0)
+        {
+            direction = -direction;
+            b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ + 180f);
+        }
+
         b.GetComponent<Rigidbody2D>().velocity = direction * playerBulletSpeed;
     }
+
 }
