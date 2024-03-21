@@ -16,10 +16,10 @@ public class PlayerBullet : MonoBehaviour
 
 		Vector3 a = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Vector3 dir = a - transform.position; //direction
-		
-		
-		//this checks to make sure that your not shooting behind u 
-		if (sameSign(dir.x, transform.right.x) && sameSign(dir.y, transform.right.y))
+											  // Debug.Log("transform: " + transform.right);
+											  // Debug.Log("dir: " + dir);
+											  //this checks to make sure that your not shooting behind u 
+		if (SameSign(dir.x, transform.right.x))
 			rb.velocity = dir.normalized * speed;
 		else
 			Destroy(gameObject);
@@ -44,7 +44,7 @@ public class PlayerBullet : MonoBehaviour
 		}
 		Destroy(gameObject);
 	}
-	private bool sameSign(float num1, float num2)
+	private bool SameSign(float num1, float num2)
 	{
 		return num1 >= 0 && num2 >= 0 || num1 < 0 && num2 < 0;
 	}
