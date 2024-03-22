@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  itemDrops:
+  - {fileID: 8324711541932282877, guid: 4b48c740cf5cb3b45b41627941a0f45b, type: 3}
 --- !u!114 &8340709496524460398
 MonoBehaviour:
   m_ObjectHideFlags: 0
