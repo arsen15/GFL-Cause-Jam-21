@@ -7,6 +7,9 @@ public class Enemy1 : MonoBehaviour
     public int maxHealth = 50;
     private int currentHealth;
 
+    // Make this a list in case we want more than 1 item
+    public GameObject[] itemDrops;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +30,20 @@ public class Enemy1 : MonoBehaviour
         if ( currentHealth <= 0 )
         {
             Die();
+            ItemDrop();
         }
     }
 
     private void Die()
     {
         Destroy(gameObject);
+    }
+
+    private void ItemDrop()
+    {
+        for (int i = 0; i < itemDrops.Length; i++)
+        {
+            Instantiate(itemDrops[i], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        }
     }
 }
