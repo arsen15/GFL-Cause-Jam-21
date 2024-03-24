@@ -15,6 +15,17 @@ public class InventoryManager : MonoBehaviour
     // Array to keep track of which slots the items are going to
     public ItemType[] currentItem;
 
+    public ItemType SelectedAmmoType { get; private set; } = ItemType.Empty;
+
+    public GameObject waterPrefab;
+    public GameObject snowballPrefab;
+    public GameObject iciclePrefab;
+
+    private void Start()
+    {
+        AddItem(ItemType.Water, 1);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -35,6 +46,7 @@ public class InventoryManager : MonoBehaviour
     public void OnButtonClicked(int slotNumber)
     {
         ItemType itemToUse = currentItem[slotNumber];
+        SelectedAmmoType = itemToUse;
 
         //Update Dictionary
         inventory[itemToUse] -= 1;
@@ -54,6 +66,21 @@ public class InventoryManager : MonoBehaviour
         else if (itemToUse == ItemType.Icicle)
         {
             useIcicle();
+        }
+    }
+
+    public GameObject GetSelectedBulletPrefab()
+    {
+        switch (SelectedAmmoType)
+        {
+            case ItemType.Water:
+                return waterPrefab;
+            case ItemType.Snowball:
+                return snowballPrefab;
+            case ItemType.Icicle:
+                return iciclePrefab;
+            default:
+                return null;
         }
     }
 

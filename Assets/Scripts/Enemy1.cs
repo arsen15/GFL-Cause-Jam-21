@@ -43,7 +43,14 @@ public class Enemy1 : MonoBehaviour
     {
         for (int i = 0; i < itemDrops.Length; i++)
         {
-            Instantiate(itemDrops[i], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            GameObject droppedBullet = Instantiate(itemDrops[i], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            PlayerBullet bulletScript = droppedBullet.GetComponent<PlayerBullet>();
+            if (bulletScript != null)
+            {
+                bulletScript.InitializeBullet(false); // Ensure the bullet won't be destroyed on collision
+            }
+            Debug.Log("Item dropped");
         }
     }
+
 }

@@ -427,7 +427,7 @@ PrefabInstance:
     - target: {fileID: -8180743023332521070, guid: 511ecf7ee271d9f44a12cd2caf2aee35, type: 3}
       propertyPath: itemDrops.Array.data[0]
       value: 
-      objectReference: {fileID: 233994786992689969, guid: 98a1cad3eec6cf44aa299bc99c6fe71e, type: 3}
+      objectReference: {fileID: 2772518836907317253, guid: 26f7417b51f0b7a42ac8083fcfeca550, type: 3}
     - target: {fileID: 1564248892671899033, guid: 511ecf7ee271d9f44a12cd2caf2aee35, type: 3}
       propertyPath: playerTransform
       value: 
@@ -649,8 +649,8 @@ GameObject:
   - component: {fileID: 541305725}
   - component: {fileID: 541305727}
   - component: {fileID: 541305728}
-  - component: {fileID: 541305729}
   - component: {fileID: 541305730}
+  - component: {fileID: 541305731}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -825,20 +825,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9947474, y: 1.875}
   m_EdgeRadius: 0
---- !u!114 &541305729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541305721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 595351c33e11233458401aa51889db73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletStart: {fileID: 1834158179}
-  bulletPrefab: {fileID: 5053633390058246577, guid: 77a83e033baadff4093b4157b5741457, type: 3}
 --- !u!114 &541305730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +840,19 @@ MonoBehaviour:
   maxHealth: 10
   health: 0
   healthBar: {fileID: 5057241562263740786, guid: 5485c5cf0a149434aa294b75fca51c5c, type: 3}
+--- !u!114 &541305731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541305721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595351c33e11233458401aa51889db73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletStart: {fileID: 1834158179}
 --- !u!4 &573368973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7978746711873163891, guid: 7502f7ceb909b4647affca3cebc6e32d, type: 3}
@@ -1392,6 +1391,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8180743023332521070, guid: 511ecf7ee271d9f44a12cd2caf2aee35, type: 3}
+      propertyPath: itemDrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 5568251828365862156, guid: 762033a7856e263479c4bafa257cb5c3, type: 3}
     - target: {fileID: 1564248892671899033, guid: 511ecf7ee271d9f44a12cd2caf2aee35, type: 3}
       propertyPath: playerTransform
       value: 
@@ -1570,6 +1573,9 @@ MonoBehaviour:
   snowballSprite: {fileID: 21300000, guid: e847367ed18edc547b8a75d78ae7c1a4, type: 3}
   icicleSprite: {fileID: 21300000, guid: c5bb4c0e38024ce42b278f87af7ea536, type: 3}
   currentItem: 030000000300000003000000
+  waterPrefab: {fileID: 233994786992689969, guid: 98a1cad3eec6cf44aa299bc99c6fe71e, type: 3}
+  snowballPrefab: {fileID: 8324711541932282877, guid: 4b48c740cf5cb3b45b41627941a0f45b, type: 3}
+  iciclePrefab: {fileID: 2004292613891461713, guid: 75568c836a2db524da3272467debbec4, type: 3}
 --- !u!4 &1788721447
 Transform:
   m_ObjectHideFlags: 0

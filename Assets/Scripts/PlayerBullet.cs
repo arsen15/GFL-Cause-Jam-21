@@ -8,33 +8,64 @@ public class PlayerBullet : MonoBehaviour
 	public float speed = 20.0f;
 	public Rigidbody2D rb;
 
+	// Checking when bullet can move as intended
+	private bool bulletCanMove = false;
+
+	//Control when bullet should destroy on collision
+	private bool destroyOnCollision = true;
+
 	// Start is called before the first frame update
 	void Start()
 	{
+		if (bulletCanMove)
+		{
+            rb = GetComponent<Rigidbody2D>();
 
-		rb = GetComponent<Rigidbody2D>();
-
-		Vector3 a = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		Vector3 dir = a - transform.position; //direction
-											  // Debug.Log("transform: " + transform.right);
-											  // Debug.Log("dir: " + dir);
-											  //this checks to make sure that your not shooting behind u 
-		if (SameSign(dir.x, transform.right.x))
-			rb.velocity = dir.normalized * speed;
-		else
-			Destroy(gameObject);
+            Vector3 a = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 dir = a - transform.position; //direction
+                                                  // Debug.Log("transform: " + transform.right);
+                                                  // Debug.Log("dir: " + dir);
+                                                  //this checks to make sure that your not shooting behind u 
+            if (SameSign(dir.x, transform.right.x))
+                rb.velocity = dir.normalized * speed;
+            else
+                Destroy(gameObject);
+        }
+		
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+        if (!bulletCanMove)
+        {
+			return;
+        }
 
-		Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
 		if (screenPoint.x < 0 || screenPoint.x > Screen.width || screenPoint.y < 0 || screenPoint.y > Screen.height)
 		{
 			Destroy(gameObject);
 		}
 	}
+
+	public void InitializeBullet(bool destroyOnImpact = true)
+	{
+		bulletCanMove = true;
+		destroyOnCollision = destroyOnImpact;
+
+		Vector3 a = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 dir = a - transform.position; //direction
+        if (SameSign(dir.x, transform.right.x))
+		{
+            rb.velocity = dir.normalized * speed;
+        }
+		else
+		{
+            Destroy(gameObject);
+        }
+            
+    }
 	private void OnTriggerEnter2D(Collider2D hit)
 	{
 		Enemy1 enemy = hit.GetComponent<Enemy1>();
@@ -42,7 +73,12 @@ public class PlayerBullet : MonoBehaviour
 		{
 			enemy.TakeDamage(damage);
 		}
-		Destroy(gameObject);
+
+		if (destroyOnCollision)
+		{
+            Destroy(gameObject);
+        }
+		
 	}
 	private bool SameSign(float num1, float num2)
 	{

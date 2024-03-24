@@ -3,7 +3,15 @@ guid: 3463ab314deb992458f21cc66b987853
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - crosshairs: {instanceID: 0}
+  - playerBulletPrefab: {instanceID: 0}
+  - BulletStart: {instanceID: 0}
+  - inventoryManager: {instanceID: 0}
+  - waterPrefab: {instanceID: 0}
+  - snowballPrefab: {instanceID: 0}
+  - iciclePrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
