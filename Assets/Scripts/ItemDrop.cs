@@ -38,5 +38,6 @@ public enum ItemType
     Water,
     Snowball,
     Icicle,
+    Empty,
 };
 
