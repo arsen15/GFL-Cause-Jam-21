@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class IcicleBullet : MonoBehaviour
 {
 	public int damage = 10;
 	public float speed = 20.0f;
 	public Rigidbody2D rb;
-
 
 	//Control when bullet should destroy on collision
 	private bool destroyOnCollision = true;
@@ -32,7 +31,7 @@ public class PlayerBullet : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-        
+
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
 		if (screenPoint.x < 0 || screenPoint.x > Screen.width || screenPoint.y < 0 || screenPoint.y > Screen.height)
 		{
@@ -56,22 +55,24 @@ public class PlayerBullet : MonoBehaviour
         }
             
     }
-	private void OnTriggerEnter2D(Collider2D hit)
-	{
-		Enemy1 enemy = hit.GetComponent<Enemy1>();
-		if (enemy != null)
-		{
-			enemy.TakeDamage(damage);
-		}
-
-		if (destroyOnCollision)
-		{
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Enemy1 enemy = collision.GetComponent<Enemy1>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+            enemy.Freee();
+        }
+        // Destroy or disable the bullet upon collision
+        if (destroyOnCollision)
+        {
             Destroy(gameObject);
         }
-		
-	}
-	private bool SameSign(float num1, float num2)
+    }
+
+    private bool SameSign(float num1, float num2)
 	{
 		return num1 >= 0 && num2 >= 0 || num1 < 0 && num2 < 0;
 	}
+    
 }

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 209551837364467940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.002, y: 0.006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0033984184, y: -0.07816625}
+  m_Offset: {x: -0.00031471252, y: -0.066498995}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5174074, y: 0.3814664}
+  m_Size: {x: 0.45558548, y: 0.3581319}
   m_EdgeRadius: 0
 --- !u!1 &388172293971916722
 GameObject:
@@ -172,8 +172,8 @@ GameObject:
   - component: {fileID: 7923556236724988975}
   - component: {fileID: 103854247753981574}
   - component: {fileID: 7554623286857015659}
-  - component: {fileID: -4118764485891607837}
-  - component: {fileID: 6518438486997785803}
+  - component: {fileID: 7521083810233649914}
+  - component: {fileID: 9191246551740399958}
   m_Layer: 0
   m_Name: Icicle
   m_TagString: Untagged
@@ -220,15 +220,15 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004292613891461713}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ed17403a5448b5c4eba8c7687af1d51f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -237,9 +237,9 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-4118764485891607837
+--- !u!114 &7521083810233649914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,14 +248,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2004292613891461713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ce80ca740626c24c8ba7ad214e67891, type: 3}
+  m_Script: {fileID: 11500000, guid: b7a9bb86cb4d8dc45b9b62979edf02b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  speed: 20
+  speed: 30
   rb: {fileID: 7554623286857015659}
---- !u!70 &6518438486997785803
-CapsuleCollider2D:
+--- !u!58 &9191246551740399958
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -286,6 +286,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.09769201}
-  m_Size: {x: 0.5, y: 0.804616}
-  m_Direction: 0
+  m_Offset: {x: -0.0045689344, y: -0.059409857}
+  serializedVersion: 2
+  m_Radius: 0.31415284
