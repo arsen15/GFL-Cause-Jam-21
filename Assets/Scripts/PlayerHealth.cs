@@ -6,7 +6,6 @@ public class PlayerHealth : MonoBehaviour
 {
 	public int maxHealth = 10;
 	public int health;
-
 	public Slider healthBar; //use slider prefab 
 	void Start()
 	{
@@ -29,11 +28,16 @@ public class PlayerHealth : MonoBehaviour
 
 		if (health <= 0)
 		{
-			Destroy(gameObject);
-			healthBar.value = 0;
-			health = 0;
+			// Destroy(gameObject);
+			respawn();
 		}
 
+	}
+	public void respawn()
+	{
+		transform.position = new Vector2(-13.0f, 0.0f);
+		healthBar.value = maxHealth;
+		health = maxHealth;
 	}
 
 }
