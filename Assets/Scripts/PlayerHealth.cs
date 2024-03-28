@@ -10,15 +10,13 @@ public class PlayerHealth : MonoBehaviour
 	void Start()
 	{
 		health = maxHealth;
-		healthBar.maxValue = 1;
-		healthBar.minValue = 0;
-		healthBar.value = 1;
+		UpdateHealthBar();
 
 	}
 	private void Update()
 	{
 
-		healthBar.value = (float)health / maxHealth;
+		UpdateHealthBar();
 
 	}
 
@@ -38,6 +36,25 @@ public class PlayerHealth : MonoBehaviour
 		transform.position = new Vector2(-13.0f, 0.0f);
 		healthBar.value = maxHealth;
 		health = maxHealth;
+	}
+
+	public void Heal(int healAmount)
+	{
+		health += healAmount;
+		if (health > maxHealth)
+		{
+			health = maxHealth;
+		}
+	}
+	public void respawn()
+	{
+		transform.position = new Vector2(-13.0f, 0.0f);
+		health = maxHealth;
+	}
+
+	private void UpdateHealthBar()
+	{
+		healthBar.value = (float)health / maxHealth;
 	}
 
 }
