@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
     public Transform bulletStart;
     //public GameObject bulletPrefab;
 
-    private InventoryManager inventoryManager;
+    private InventoryManager inventoryManager;    
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
-        }
+        } 
     }
 
     void Shoot()
@@ -45,4 +46,5 @@ public class Weapon : MonoBehaviour
             Debug.Log("No bullet prefab found for the selected ammo type.");
         }
     }
+
 }

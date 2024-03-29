@@ -1,58 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    // Movement & Jumping
     public Rigidbody2D playerRb;
     public float speed;
     public float input;
     public SpriteRenderer spriteRenderer;
     public float jumpForce;
-
     public LayerMask groundLayer;
     private bool isGrounded;
     public Transform feetPos;
     public float groundCheckCircle;
     private bool facingRight;
 
+    // Knockback
     public float knockBackForce;
     public float knockBackCounter;
     public float knockBackTotalTime;
-
     public bool knockFromRight;
 
-    // Start is called before the first frame update
+    // Animation
+    public Animator animator;
+
+    // Shooting
+    public Transform bulletStart;
+    private InventoryManager inventoryManager;
+
     void Start()
     {
-        
+        inventoryManager = FindObjectOfType<InventoryManager>();
+        if (inventoryManager == null)
+        {
+            Debug.LogError("No inventory manager found!");
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        input = Input.GetAxisRaw("Horizontal");
+        HandleMovement();
+        HandleJumping();
+        HandleShooting();
+    }
 
-        if (input < 0 && !facingRight)
+    private void FixedUpdate()
+    {
+        HandleKnockback();
+    }
+
+    private void HandleMovement()
+    {
+        input = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("Speed", Mathf.Abs(input));
+
+        if (input < 0 && !facingRight || input > 0 && facingRight)
         {
-            Flip();
-        } else if (input > 0 && facingRight)
-        {
-            //spriteRenderer.flipX = false;
             Flip();
         }
+    }
 
+    private void HandleJumping()
+    {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, groundCheckCircle, groundLayer);
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             playerRb.velocity = Vector2.up * jumpForce;
         }
-
-        
     }
 
-    private void FixedUpdate()
+    private void HandleKnockback()
     {
         if (knockBackCounter <= 0)
         {
@@ -60,16 +80,8 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (knockFromRight == true)
-            {
-                playerRb.velocity = new Vector2(-knockBackForce, knockBackForce);
-            }
-
-            if (knockFromRight == false)
-            {
-                playerRb.velocity = new Vector2(knockBackForce, knockBackForce);
-            }
-
+            var direction = knockFromRight ? -1 : 1;
+            playerRb.velocity = new Vector2(direction * knockBackForce, knockBackForce);
             knockBackCounter -= Time.deltaTime;
         }
     }
@@ -77,9 +89,31 @@ public class Player : MonoBehaviour
     private void Flip()
     {
         facingRight = !facingRight;
-
         transform.Rotate(0f, 180f, 0f);
     }
 
-    
+    private void HandleShooting()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            animator.SetBool("isShooting", true);
+            Shoot();
+        } else if (Input.GetButtonUp("Fire1"))
+        {
+            animator.SetBool("isShooting", false);
+        }
+    }
+
+    private void Shoot()
+    {
+        GameObject bulletPrefab = inventoryManager.GetSelectedBulletPrefab();
+        if (bulletPrefab != null)
+        {
+            Instantiate(bulletPrefab, bulletStart.position, bulletStart.rotation);
+        }
+        else
+        {
+            Debug.Log("No bullet prefab found for the selected ammo type.");
+        }
+    }
 }
