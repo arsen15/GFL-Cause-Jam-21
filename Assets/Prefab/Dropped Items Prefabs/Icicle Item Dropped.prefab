@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4874926841530022887}
   - component: {fileID: 3332747581286701369}
   - component: {fileID: 485993653064494420}
-  - component: {fileID: 2490106575684881605}
+  - component: {fileID: 5464532531874263247}
   m_Layer: 8
   m_Name: Icicle Item Dropped
   m_TagString: Untagged
@@ -77,8 +77,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &2490106575684881605
-CapsuleCollider2D:
+--- !u!60 &5464532531874263247
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,9 +109,22 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.006093025, y: -0.010439873}
-  m_Size: {x: 0.6827984, y: 0.77724457}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.5158644, y: 1.3512368}
+      - {x: -1.5305791, y: -1.2773327}
+      - {x: 1.900012, y: -0.10384017}
+  m_UseDelaunayMesh: 0
 --- !u!1 &4181045604323241610
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +198,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7a8d22a948719941bfe83c5b17595ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,7 +218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3803925567551994245}
-  - component: {fileID: 5475344396683709791}
+  - component: {fileID: 8785799562513785908}
   m_Layer: 8
   m_Name: InnerCollider
   m_TagString: Untagged
@@ -228,8 +241,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4874926841530022887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5475344396683709791
-BoxCollider2D:
+--- !u!60 &8785799562513785908
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -260,7 +273,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0033984184, y: -0.07816625}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -270,6 +283,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5174074, y: 0.3814664}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.2940311, y: 0.9630275}
+      - {x: -1.2964215, y: -0.97539234}
+      - {x: 1.4625082, y: -0.09767777}
+  m_UseDelaunayMesh: 0

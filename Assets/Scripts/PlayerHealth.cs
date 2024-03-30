@@ -31,12 +31,6 @@ public class PlayerHealth : MonoBehaviour
 		}
 
 	}
-	public void respawn()
-	{
-		transform.position = new Vector2(-13.0f, 0.0f);
-		healthBar.value = maxHealth;
-		health = maxHealth;
-	}
 
 	public void Heal(int healAmount)
 	{

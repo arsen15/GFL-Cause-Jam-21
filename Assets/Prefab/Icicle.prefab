@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 209551837364467940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.002, y: 0.006, z: 0}
+  m_LocalPosition: {x: -0.15, y: 0.006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,7 +104,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.13168983}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7923556236724988975}
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7a8d22a948719941bfe83c5b17595ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 103854247753981574}
   - component: {fileID: 7554623286857015659}
   - component: {fileID: 7521083810233649914}
-  - component: {fileID: 9191246551740399958}
+  - component: {fileID: 4104148092551393017}
   m_Layer: 0
   m_Name: Icicle
   m_TagString: Untagged
@@ -254,8 +254,8 @@ MonoBehaviour:
   damage: 10
   speed: 30
   rb: {fileID: 7554623286857015659}
---- !u!58 &9191246551740399958
-CircleCollider2D:
+--- !u!60 &4104148092551393017
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -286,6 +286,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0045689344, y: -0.059409857}
-  serializedVersion: 2
-  m_Radius: 0.31415284
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.6858864, y: 0.51467586}
+      - {x: -0.6701186, y: -0.50918126}
+      - {x: 0.82982635, y: -0.039658368}
+  m_UseDelaunayMesh: 0
