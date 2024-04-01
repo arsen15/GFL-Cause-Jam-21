@@ -36,13 +36,17 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject );
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("LevelObject"))
+        {
+            Destroy(gameObject);
         }
         PlayerHealth playerHP = collision.GetComponent<PlayerHealth>();
         if (playerHP != null)
         {
             playerHP.TakeDamage(enemyBulletDamage);
         }
-        //Destroy(gameObject);
+        
     }
 }
