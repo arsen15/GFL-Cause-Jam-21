@@ -7,7 +7,20 @@ public class ButtonEvents : MonoBehaviour
 {
 	public void startButtonEvent()
 	{
-		SceneManager.LoadScene("SampleScene");
+		SceneManager.LoadScene(1);
 
+	}
+	public void creditEvent()
+	{
+		SceneManager.LoadScene("Credits");
+
+	}
+	public void optionsEvent()
+	{
+		SceneManager.LoadScene("Options");
+	}
+	public void BackToHome()
+	{
+		SceneManager.LoadScene(0);
 	}
 }
