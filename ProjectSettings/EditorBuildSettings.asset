@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level/Level_1_Hawaii.unity
     guid: add63db44376f0d488ff204df0c5b71f
+  - enabled: 1
+    path: Assets/Scenes/Level/Level_2.unity
+    guid: b0fe9f2ec167580438c11f72d6b25a07
+  - enabled: 1
+    path: Assets/Scenes/Level/Level_3.unity
+    guid: d5a2d91e6f7df2b4eaf5d88254629bc1
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729

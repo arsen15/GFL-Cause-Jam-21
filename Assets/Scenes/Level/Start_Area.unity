@@ -2074,8 +2074,12 @@ PrefabInstance:
       objectReference: {fileID: 997576036}
     - target: {fileID: 2811658014940553072, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: itemDrops.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2811658014940553072, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
+      propertyPath: itemDrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 2264893097590600737, guid: b32a52209c033884ab2723d4f82ba140, type: 3}
     - target: {fileID: 2811658014940553072, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: itemDrops.Array.data[1]
       value: 
@@ -2088,6 +2092,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 356989712}
+    - target: {fileID: 6395841653025853103, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
+      propertyPath: shootingPeriod
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7591267734540536064, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.98689
