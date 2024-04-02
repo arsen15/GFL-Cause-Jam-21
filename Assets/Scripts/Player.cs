@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     public Transform bulletStart;
     private InventoryManager inventoryManager;
 
+    public SpecialItemManger coconutManager;
+
     void Start()
     {
         inventoryManager = FindObjectOfType<InventoryManager>();
@@ -114,6 +116,16 @@ public class Player : MonoBehaviour
         else
         {
             Debug.Log("No bullet prefab found for the selected ammo type.");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // If player collides with object with Tag coconut then increment counter.
+        if (other.gameObject.CompareTag("Coconut"))
+        {
+            Destroy(other.gameObject);
+            coconutManager.coconutCount++;
         }
     }
 }
