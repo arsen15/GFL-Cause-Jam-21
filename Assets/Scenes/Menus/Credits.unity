@@ -382,19 +382,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'thanks to Internship 2 \n
+  m_text: 'Thanks to Internship 2 \n
 
-    arsen - developer \n
-
-    theo - developer
+    Arsen Shintemirov - Software Developer
     \n
 
-    aisha - game designer \n
+    Theo - developer \n
 
-    kobe- artist \n
+    Aisha Jamal - Game Designer \n
 
-    anyone else who contributed
-    we thank you'
+    kobe- artist
+    \n
+
+    anyone else who contributed we thank you'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
