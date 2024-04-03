@@ -794,8 +794,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1831, y: 9}
-  m_SizeDelta: {x: 327.06, y: 43.64}
+  m_AnchoredPosition: {x: 1831, y: 6.28}
+  m_SizeDelta: {x: 327.06, y: 67.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317167523
 MonoBehaviour:
@@ -829,8 +829,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: HAPPY TRAVELS!
+    m_LineSpacing: 1.5
+  m_Text: Collect All Souvenirs!
 --- !u!222 &317167524
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2725,7 +2725,7 @@ PrefabInstance:
       objectReference: {fileID: 997576036}
     - target: {fileID: 2811658014940553072, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: itemDrops.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2811658014940553072, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: itemDrops.Array.data[0]
@@ -2734,7 +2734,7 @@ PrefabInstance:
     - target: {fileID: 2811658014940553072, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: itemDrops.Array.data[1]
       value: 
-      objectReference: {fileID: 5568251828365862156, guid: 762033a7856e263479c4bafa257cb5c3, type: 3}
+      objectReference: {fileID: 2772518836907317253, guid: 26f7417b51f0b7a42ac8083fcfeca550, type: 3}
     - target: {fileID: 2811658014940553072, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
@@ -2753,7 +2753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7591267734540536064, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23009634
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 7591267734540536064, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: m_LocalPosition.z

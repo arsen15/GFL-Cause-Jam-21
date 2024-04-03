@@ -59,6 +59,7 @@ public class PlayerBullet : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D hit)
 	{
 		Enemy1 enemy = hit.GetComponent<Enemy1>();
+		Enemy1NoMovement enemyNoMove = hit.GetComponent<Enemy1NoMovement>();
 		if (enemy != null)
 		{
 			enemy.TakeDamage(damage);
@@ -68,8 +69,18 @@ public class PlayerBullet : MonoBehaviour
 		{
             Destroy(gameObject);
         }
-		
-	}
+
+        if (enemyNoMove != null)
+        {
+            enemyNoMove.TakeDamage(damage);
+        }
+
+        if (destroyOnCollision)
+        {
+            Destroy(gameObject);
+        }
+
+    }
 	private bool SameSign(float num1, float num2)
 	{
 		return num1 >= 0 && num2 >= 0 || num1 < 0 && num2 < 0;
