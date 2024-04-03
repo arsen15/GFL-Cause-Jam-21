@@ -64,11 +64,11 @@ public class InventoryManager : MonoBehaviour
                 itemImages[i].sprite = GetSpriteForItem(currentItem[i]);
                 // Update any additional UI elements or item counts as needed
             }
-            else
-            {
+            //else
+            //{
                 // Clear or hide UI elements for empty slots
-                itemImages[i].sprite = null;
-            }
+                //itemImages[i].sprite = null;
+            //}
         }
 
     }
@@ -116,11 +116,11 @@ public class InventoryManager : MonoBehaviour
                 itemImages[i].sprite = GetSpriteForItem(currentItem[i]);
                 // Update any additional UI elements to reflect item counts or other relevant info
             }
-            else
-            {
+            //else
+            //{
                 // Clear or hide UI elements for empty slots
-                itemImages[i].sprite = null;
-            }
+                //itemImages[i].sprite = null;
+            //}
         }
     }
 
