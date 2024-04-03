@@ -11,29 +11,29 @@ public class PlayerBullet : MonoBehaviour
 
 	//Control when bullet should destroy on collision
 	private bool destroyOnCollision = true;
-
+	public AudioSource onCollisonSound;
 	// Start is called before the first frame update
 	void Start()
 	{
-        rb = GetComponent<Rigidbody2D>();
+		rb = GetComponent<Rigidbody2D>();
 
-        Vector3 a = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 dir = a - transform.position; //direction
-                                              // Debug.Log("transform: " + transform.right);
-                                              // Debug.Log("dir: " + dir);
-                                              //this checks to make sure that your not shooting behind u 
-        if (SameSign(dir.x, transform.right.x))
-            rb.velocity = dir.normalized * speed;
-        else
-            Destroy(gameObject);
+		Vector3 a = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		Vector3 dir = a - transform.position; //direction
+											  // Debug.Log("transform: " + transform.right);
+											  // Debug.Log("dir: " + dir);
+											  //this checks to make sure that your not shooting behind u 
+		if (SameSign(dir.x, transform.right.x))
+			rb.velocity = dir.normalized * speed;
+		else
+			Destroy(gameObject);
 
-    }
+	}
 
 	// Update is called once per frame
 	void Update()
 	{
-        
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+
+		Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
 		if (screenPoint.x < 0 || screenPoint.x > Screen.width || screenPoint.y < 0 || screenPoint.y > Screen.height)
 		{
 			Destroy(gameObject);
@@ -45,20 +45,22 @@ public class PlayerBullet : MonoBehaviour
 		destroyOnCollision = destroyOnImpact;
 
 		Vector3 a = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 dir = a - transform.position; //direction
-        if (SameSign(dir.x, transform.right.x))
+		Vector3 dir = a - transform.position; //direction
+		GetComponent<AudioSource>().Play();
+		if (SameSign(dir.x, transform.right.x))
 		{
-            rb.velocity = dir.normalized * speed;
-        }
+			rb.velocity = dir.normalized * speed;
+		}
 		else
 		{
-            Destroy(gameObject);
-        }
-            
-    }
+			Destroy(gameObject);
+		}
+
+	}
 	private void OnTriggerEnter2D(Collider2D hit)
 	{
 		Enemy1 enemy = hit.GetComponent<Enemy1>();
+		// onCollisonSound.Play();
 		if (enemy != null)
 		{
 			enemy.TakeDamage(damage);
@@ -66,9 +68,9 @@ public class PlayerBullet : MonoBehaviour
 
 		if (destroyOnCollision)
 		{
-            Destroy(gameObject);
-        }
-		
+			Destroy(gameObject);
+		}
+
 	}
 	private bool SameSign(float num1, float num2)
 	{

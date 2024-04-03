@@ -489,7 +489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Peguin voyage
+  m_text: Peguin Voyage
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c35c0b97f983d449a4fdf08f69fe32e, type: 2}
   m_sharedMaterial: {fileID: -3607288198039637834, guid: 1c35c0b97f983d449a4fdf08f69fe32e, type: 2}

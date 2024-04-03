@@ -7,10 +7,14 @@ public class PlayerHealth : MonoBehaviour
 	public int maxHealth = 10;
 	public int health;
 	public Slider healthBar; //use slider prefab 
+	public AudioSource hurt;
+	public AudioSource Respawn;
+
 	void Start()
 	{
 		health = maxHealth;
 		UpdateHealthBar();
+
 
 	}
 	private void Update()
@@ -23,12 +27,15 @@ public class PlayerHealth : MonoBehaviour
 	public void TakeDamage(int damage)
 	{
 		health -= damage;
+		hurt.Play();
 
 		if (health <= 0)
 		{
 			// Destroy(gameObject);
+
 			respawn();
 		}
+
 
 	}
 
@@ -42,8 +49,10 @@ public class PlayerHealth : MonoBehaviour
 	}
 	public void respawn()
 	{
+
 		transform.position = new Vector2(-13.0f, 0.0f);
 		health = maxHealth;
+		Respawn.Play();
 	}
 
 	private void UpdateHealthBar()
