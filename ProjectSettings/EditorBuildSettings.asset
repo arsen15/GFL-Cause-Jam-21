@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Level/Level_1_Hawaii.unity
     guid: add63db44376f0d488ff204df0c5b71f
   - enabled: 1
-    path: Assets/Scenes/Level/Level_2_France.unity
-    guid: 0f984867b499a4347800bfd313c71bf7
-  - enabled: 1
-    path: Assets/Scenes/Level/Level_3_Japan.unity
-    guid: d511520ea1727c746bb3a9020972d3d4
+    path: Assets/Scenes/Level/Level_2.unity
+    guid: b0fe9f2ec167580438c11f72d6b25a07
+  - enabled: 0
+    path: Assets/Scenes/Level/Level_3.unity
+    guid: d5a2d91e6f7df2b4eaf5d88254629bc1
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
