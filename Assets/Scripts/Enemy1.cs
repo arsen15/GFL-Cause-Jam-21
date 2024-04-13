@@ -106,7 +106,7 @@ public class Enemy1 : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
+        DamagePopUpGenerator.current.CreatePopUp(transform.position, damage, Color.red);
         if ( currentHealth <= 0 )
         {
             Die();
