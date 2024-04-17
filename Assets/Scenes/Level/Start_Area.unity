@@ -2159,10 +2159,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 997576036}
-    - target: {fileID: 530297648595750507, guid: 5911f0017c8546b4dbe29bfdf382adbe, type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 3895594929827465581, guid: 5911f0017c8546b4dbe29bfdf382adbe, type: 3}
       propertyPath: m_BiasY
       value: -0.007
