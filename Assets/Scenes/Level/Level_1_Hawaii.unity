@@ -3366,6 +3366,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5914424377641876188, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 208978263}
+    - target: {fileID: 5914424377641876188, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: coconutText
+      value: 
+      objectReference: {fileID: 607267767}
     - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
       propertyPath: m_Name
       value: Coconut
