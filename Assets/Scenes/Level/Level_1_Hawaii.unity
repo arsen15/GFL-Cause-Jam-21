@@ -2214,6 +2214,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6839698074294310418, guid: 96e5674ead85f134eaf83e1a8c01c296, type: 3}
+      propertyPath: itemManager
+      value: 
+      objectReference: {fileID: 936986671}
+    - target: {fileID: 6839698074294310418, guid: 96e5674ead85f134eaf83e1a8c01c296, type: 3}
       propertyPath: coconutManager
       value: 
       objectReference: {fileID: 936986671}
@@ -3922,7 +3926,7 @@ GameObject:
   - component: {fileID: 936986672}
   - component: {fileID: 936986671}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: ItemManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
