@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LevelObject
+  - Coconut
   layers:
   - Default
   - TransparentFX

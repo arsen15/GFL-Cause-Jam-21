@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 	public Transform bulletStart;
 	private InventoryManager inventoryManager;
 
-	public ItemManager coconutManager;
+	public ItemManager itemManager;
 	public AudioSource jump;
 
 	void Start()
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
 		{
 			Destroy(other.gameObject);
 			GetComponent<AudioSource>().Play();
-			coconutManager.coconutCount++;
+			itemManager.coconutCount++;
 		}
 	}
 }
