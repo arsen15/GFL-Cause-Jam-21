@@ -1,38 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemManager : MonoBehaviour
+public class ItemManager : MonoBehaviour, ICollectible
 {
-    public int coconutCount;
 
-    public Text coconutText;
-    public GameObject door;
-    private bool doorDestroyed;
-    // Start is called before the first frame update
-    void Start()
+    public static event Action OnItemCollected;
+
+    public void Collect()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (coconutText != null)
-        {
-            coconutText.text = ": " + coconutCount.ToString();
-        }
-        else
-        {
-            Debug.LogWarning("coconutText is not assigned!");
-        }
-
-        if (coconutCount == 15 && !doorDestroyed)
-        {
-            doorDestroyed = true;
-            Destroy(door);
-        }
-
+        Debug.Log("Item collected");
+        Destroy(gameObject);
+        OnItemCollected?.Invoke();
     }
 }
