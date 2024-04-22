@@ -525,6 +525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coconut (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -858,6 +862,10 @@ PrefabInstance:
     - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
       propertyPath: m_Name
       value: Coconut (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1211,6 +1219,10 @@ PrefabInstance:
     - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
       propertyPath: m_Name
       value: Coconut (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2025,6 +2037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coconut (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2129,7 +2145,7 @@ RectTransform:
   - {fileID: 1947280101}
   - {fileID: 729348323}
   - {fileID: 904593894}
-  - {fileID: 607267769}
+  - {fileID: 1385643949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2214,6 +2230,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6839698074294310418, guid: 96e5674ead85f134eaf83e1a8c01c296, type: 3}
+      propertyPath: itemManager
+      value: 
+      objectReference: {fileID: 936986671}
+    - target: {fileID: 6839698074294310418, guid: 96e5674ead85f134eaf83e1a8c01c296, type: 3}
       propertyPath: coconutManager
       value: 
       objectReference: {fileID: 936986671}
@@ -2276,6 +2296,10 @@ PrefabInstance:
     - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
       propertyPath: m_Name
       value: Coconut (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2702,6 +2726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coconut (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2826,6 +2854,10 @@ PrefabInstance:
     - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
       propertyPath: m_Name
       value: Coconut (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3299,6 +3331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coconut (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3352,9 +3388,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5914424377641876188, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 208978263}
+    - target: {fileID: 5914424377641876188, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: coconutText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
       propertyPath: m_Name
       value: Coconut
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3889,53 +3937,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4546bbe0a541c24ca4b2158c137a8ff, type: 3}
---- !u!1 &936986670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 936986672}
-  - component: {fileID: 936986671}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &936986671
+--- !u!114 &936986671 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3877125454055869640, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+  m_PrefabInstance: {fileID: 3422187796285731864}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936986670}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b9ef2290b57d024f9db86f914a82f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coconutCount: 0
-  coconutText: {fileID: 607267767}
-  door: {fileID: 208978263}
---- !u!4 &936986672
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936986670}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6166992, y: -2.2801836, z: -0.055974398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &937037175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4746,6 +4758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coconut (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5156,6 +5172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coconut (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5502,6 +5522,10 @@ PrefabInstance:
     - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
       propertyPath: m_Name
       value: Coconut (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7080,6 +7104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coconut (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7367,6 +7395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coconut (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7423,6 +7455,10 @@ PrefabInstance:
     - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
       propertyPath: m_Name
       value: Coconut (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970052882280224506, guid: 0bd48d85223c7504688e9930d877eaea, type: 3}
+      propertyPath: m_TagString
+      value: Collectible Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8374,6 +8410,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 859249677279996768, guid: 0148b48b8e1d33b4699421fe6b43b3cc, type: 3}
+      propertyPath: m_Volume
+      value: 0.503
+      objectReference: {fileID: 0}
     - target: {fileID: 5457050523460685723, guid: 0148b48b8e1d33b4699421fe6b43b3cc, type: 3}
       propertyPath: m_Name
       value: Level1Sounds
@@ -8573,6 +8613,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5911f0017c8546b4dbe29bfdf382adbe, type: 3}
+--- !u!1001 &3422187796285731864
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.6166992
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.2801836
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.055974398
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971935608736130810, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966199691184043649, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
+      propertyPath: m_Name
+      value: ItemManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f79d6985c18c0cf4bafdf95d144cf914, type: 3}
 --- !u!1001 &3811416992151230220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8810,7 +8907,7 @@ SceneRoots:
   - {fileID: 1381076565}
   - {fileID: 527025763}
   - {fileID: 1276397040}
-  - {fileID: 936986672}
+  - {fileID: 3422187796285731864}
   - {fileID: 92518514}
   - {fileID: 1610015295}
   - {fileID: 1938477270}

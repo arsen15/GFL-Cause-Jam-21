@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6839698074294310418}
   - component: {fileID: 5948602636623867409}
   - component: {fileID: 4502414814356303216}
+  - component: {fileID: -3387043742987971017}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -222,6 +223,8 @@ MonoBehaviour:
   knockFromRight: 0
   animator: {fileID: 4502414814356303216}
   bulletStart: {fileID: 4082831968195271859}
+  itemManager: {fileID: 0}
+  jump: {fileID: 0}
 --- !u!114 &5948602636623867409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +261,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3387043742987971017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4265073754433805371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84032872e8411dd4dbf558ba1ff89db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5048046179459966967
 GameObject:
   m_ObjectHideFlags: 0

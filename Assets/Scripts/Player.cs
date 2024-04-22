@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
 	public Transform bulletStart;
 	private InventoryManager inventoryManager;
 
-	public ItemManager coconutManager;
 	public AudioSource jump;
 
 	void Start()
@@ -122,14 +121,4 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter2D(Collider2D other)
-	{
-		// If player collides with object with Tag coconut then increment counter.
-		if (other.gameObject.CompareTag("Coconut"))
-		{
-			Destroy(other.gameObject);
-			GetComponent<AudioSource>().Play();
-			coconutManager.coconutCount++;
-		}
-	}
 }
