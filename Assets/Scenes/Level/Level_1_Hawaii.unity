@@ -8513,6 +8513,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 227110881}
     - target: {fileID: 3895594929827465581, guid: 5911f0017c8546b4dbe29bfdf382adbe, type: 3}
+      propertyPath: m_YDamping
+      value: 12.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895594929827465581, guid: 5911f0017c8546b4dbe29bfdf382adbe, type: 3}
       propertyPath: m_DeadZoneWidth
       value: 0.15
       objectReference: {fileID: 0}
