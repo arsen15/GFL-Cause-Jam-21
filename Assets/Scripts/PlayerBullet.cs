@@ -80,7 +80,7 @@ public class PlayerBullet : MonoBehaviour
         // if (boar != null) {
         // 	boar.TakeDamage(damage);
         // 	boar.SetChasing(true);
-        // }
+        // } //resolve
 
         if (
             hit.gameObject.CompareTag("Collectible Item")
