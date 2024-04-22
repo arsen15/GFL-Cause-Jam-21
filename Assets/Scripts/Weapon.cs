@@ -6,9 +6,10 @@ using UnityEngine.Events;
 public class Weapon : MonoBehaviour
 {
     public Transform bulletStart;
+
     //public GameObject bulletPrefab;
 
-    private InventoryManager inventoryManager;    
+    private InventoryManager inventoryManager; //aaa
 
     private void Start()
     {
@@ -16,7 +17,6 @@ public class Weapon : MonoBehaviour
         if (inventoryManager == null)
         {
             Debug.LogError("No inventory manager!");
-
         }
     }
 
@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
-        } 
+        }
     }
 
     void Shoot()
@@ -34,7 +34,11 @@ public class Weapon : MonoBehaviour
         GameObject bulletPrefab = inventoryManager.GetSelectedBulletPrefab();
         if (bulletPrefab != null)
         {
-            GameObject bulletObject = Instantiate(bulletPrefab, bulletStart.position, bulletStart.rotation);
+            GameObject bulletObject = Instantiate(
+                bulletPrefab,
+                bulletStart.position,
+                bulletStart.rotation
+            );
             PlayerBullet bulletScript = bulletObject.GetComponent<PlayerBullet>();
             if (bulletScript != null)
             {
@@ -46,5 +50,4 @@ public class Weapon : MonoBehaviour
             Debug.Log("No bullet prefab found for the selected ammo type.");
         }
     }
-
 }
