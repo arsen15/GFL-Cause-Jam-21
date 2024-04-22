@@ -19,17 +19,19 @@ public class ItemText : MonoBehaviour
             doorDestroyed = true;
             Destroy(door);
         }
+        Debug.Log("test: "+gameObject.name);
     }
 
     private void OnEnable()
     {
         ItemManager.OnItemCollected += IncrementItemCount;
-
     }
+
     private void OnDisable()
     {
         ItemManager.OnItemCollected -= IncrementItemCount;
     }
+
     public void IncrementItemCount()
     {
         itemCount++;
