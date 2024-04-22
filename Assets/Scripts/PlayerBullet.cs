@@ -66,12 +66,15 @@ public class PlayerBullet : MonoBehaviour
 			enemy.TakeDamage(damage);
 		}
 
-		if (destroyOnCollision)
-		{
-			Destroy(gameObject);
-		}
+        if (hit.gameObject.CompareTag("Collectible Item") || hit.gameObject.CompareTag("Enemy Bullet"))
+        {
+			Debug.Log("Hit collectible and enemy bullet");
+			return;
+        }
 
-	}
+        Destroy(gameObject);
+
+    }
 	private bool SameSign(float num1, float num2)
 	{
 		return num1 >= 0 && num2 >= 0 || num1 < 0 && num2 < 0;

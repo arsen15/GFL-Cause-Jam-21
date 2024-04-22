@@ -46,9 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b9ef2290b57d024f9db86f914a82f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coconutCount: 0
-  coconutText: {fileID: 0}
-  door: {fileID: 0}
 --- !u!212 &4755589754406939823
 SpriteRenderer:
   m_ObjectHideFlags: 0
