@@ -18,7 +18,7 @@ public class Enemy1 : MonoBehaviour
     public Transform playerTransform;
     public bool isChasing;
     public float chaseDistance;
-    
+
     // Freeze Bullet interaction
     public float freezeTime = 3f;
     private bool isFrozen = false;
@@ -26,7 +26,7 @@ public class Enemy1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;  
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class Enemy1 : MonoBehaviour
         {
             return;
         }
-        // Enemy Chasing logic 
+        // Enemy Chasing logic
         if (isChasing)
         {
             if (transform.position.x > playerTransform.position.x)
@@ -57,29 +57,21 @@ public class Enemy1 : MonoBehaviour
             {
                 isChasing = true;
             }
-            // Enemy patrol logic
-            if (patrolDestination == 0)
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                patrolPoints[patrolDestination].position,
+                moveSpeed * Time.deltaTime
+            );
+            if (
+                Vector2.Distance(transform.position, patrolPoints[patrolDestination].position)
+                < 0.5f
+            )
             {
-                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0].position, moveSpeed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, patrolPoints[0].position) < 0.5f)
-                {
-                    transform.localScale = new Vector3(-5, 5, 5);
-                    patrolDestination = 1;
-                }
-            }
-
-            if (patrolDestination == 1)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[1].position, moveSpeed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, patrolPoints[1].position) < 0.5f)
-                {
-                    transform.localScale = new Vector3(5, 5, 5);
-                    patrolDestination = 0;
-                }
+                patrolDestination++;
+                patrolDestination %= patrolPoints.Length;
+                GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
             }
         }
-
-        
     }
 
     public void Freee()
@@ -107,7 +99,7 @@ public class Enemy1 : MonoBehaviour
     {
         currentHealth -= damage;
         DamagePopUpGenerator.current.CreatePopUp(transform.position, damage, Color.red);
-        if ( currentHealth <= 0 )
+        if (currentHealth <= 0)
         {
             Die();
             ItemDrop();
@@ -123,7 +115,11 @@ public class Enemy1 : MonoBehaviour
     {
         for (int i = 0; i < itemDrops.Length; i++)
         {
-            GameObject droppedBullet = Instantiate(itemDrops[i], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            GameObject droppedBullet = Instantiate(
+                itemDrops[i],
+                transform.position + new Vector3(0, 1, 0),
+                Quaternion.identity
+            );
             PlayerBullet bulletScript = droppedBullet.GetComponent<PlayerBullet>();
             if (bulletScript != null)
             {
@@ -132,6 +128,4 @@ public class Enemy1 : MonoBehaviour
             Debug.Log("Item dropped");
         }
     }
-
-
 }
