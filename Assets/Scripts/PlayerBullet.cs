@@ -66,6 +66,12 @@ public class PlayerBullet : MonoBehaviour
 			enemy.TakeDamage(damage);
 		}
 
+		Boar boar = hit.GetComponent<Boar>();
+		if (boar != null) {
+			boar.TakeDamage(damage);
+			boar.SetChasing(true);
+		}
+
 		if (destroyOnCollision)
 		{
 			Destroy(gameObject);
