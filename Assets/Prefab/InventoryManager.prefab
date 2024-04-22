@@ -54,4 +54,4 @@ MonoBehaviour:
   currentItem: 030000000300000003000000
   waterPrefab: {fileID: 233994786992689969, guid: 98a1cad3eec6cf44aa299bc99c6fe71e, type: 3}
   snowballPrefab: {fileID: 8324711541932282877, guid: 4b48c740cf5cb3b45b41627941a0f45b, type: 3}
-  iciclePrefab: {fileID: 2004292613891461713, guid: 75568c836a2db524da3272467debbec4, type: 3}
+  iciclePrefab: {fileID: 8413349291034240754, guid: 3261383dd4e063644a6e0eee80e969ac, type: 3}

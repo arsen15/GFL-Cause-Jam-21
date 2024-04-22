@@ -74,7 +74,7 @@ public class Enemy1 : MonoBehaviour
         }
     }
 
-    public void Freee()
+    public void Freez()
     {
         if (!isFrozen)
         {
