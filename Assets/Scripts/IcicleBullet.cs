@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class IcicleBullet : MonoBehaviour
@@ -10,7 +11,7 @@ public class IcicleBullet : MonoBehaviour
 
 	//Control when bullet should destroy on collision
 	private bool destroyOnCollision = true;
-	public GameObject onCollisonSound;
+	//public AudioSource onCollisonSound;
 
 	// Start is called before the first frame update
 	void Start()
@@ -59,19 +60,25 @@ public class IcicleBullet : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		Enemy1 enemy = collision.GetComponent<Enemy1>();
-		onCollisonSound.GetComponent<AudioSource>().Play();
+		//onCollisonSound.GetComponent<AudioSource>().Play();
+		
 
 		if (enemy != null)
 		{
 			enemy.TakeDamage(damage);
-			enemy.Freee();
-		}
-		// Destroy or disable the bullet upon collision
-		if (destroyOnCollision)
-		{
-			Destroy(gameObject);
-		}
-	}
+            enemy.Freez();
+        }
+        if (
+        collision.gameObject.CompareTag("Collectible Item")
+            || collision.gameObject.CompareTag("Enemy Bullet")
+        )
+        {
+            Debug.Log("Hit collectible and enemy bullet");
+            return;
+        }
+
+        Destroy(gameObject);
+    }
 
 	private bool SameSign(float num1, float num2)
 	{
