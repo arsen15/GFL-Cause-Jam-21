@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+	private Camera mainCam;
 	// Movement & Jumping
 	public Rigidbody2D playerRb;
 	public float speed;
@@ -92,7 +93,9 @@ public class Player : MonoBehaviour
 	private void Flip()
 	{
 		facingRight = !facingRight;
-		transform.Rotate(0f, 180f, 0f);
+		Vector3 scale = transform.localScale;
+       		scale.x *= -1; 
+        	transform.localScale = scale;
 	}
 
 	private void HandleShooting()
@@ -111,10 +114,22 @@ public class Player : MonoBehaviour
 	private void Shoot()
 	{
 		GameObject bulletPrefab = inventoryManager.GetSelectedBulletPrefab();
-		if (bulletPrefab != null)
-		{
-			Instantiate(bulletPrefab, bulletStart.position, bulletStart.rotation);
-		}
+    		if (bulletPrefab != null)
+    		{
+        		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        		Vector3 direction = (mousePos - bulletStart.position).normalized;
+			if (direction.x > 0 && facingRight)
+        		{
+            			Flip(); 
+        		}
+        		else if (direction.x < 0 && !facingRight)
+        		{
+            			Flip(); 
+        		}
+       		 	float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+       		 	Instantiate(bulletPrefab, bulletStart.position, Quaternion.AngleAxis(rotZ, Vector3.forward));
+    		}
 		else
 		{
 			Debug.Log("No bullet prefab found for the selected ammo type.");
