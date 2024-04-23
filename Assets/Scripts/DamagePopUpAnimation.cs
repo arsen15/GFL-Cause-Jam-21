@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class DamagePopUpAnimation : MonoBehaviour
 {
-    public AnimationCurve opacityCurve; //
+    public AnimationCurve opacityCurve; 
     public AnimationCurve scaleCurve;
 
     public AnimationCurve heightCurve;
