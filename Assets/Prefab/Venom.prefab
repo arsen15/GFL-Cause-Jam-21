@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c669bd116811410592dab2e221a361e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBulletDamage: 0
+  enemyBulletDamage: 2
 --- !u!58 &6902571266954269934
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9093117990103447021}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

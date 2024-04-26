@@ -1,10 +1,6 @@
-using System;
 using System.Collections;
-using System.Diagnostics;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.Animations;
-
 public enum State {
     Shooting,
     Hopping
@@ -15,7 +11,7 @@ public class Snake : MonoBehaviour
     public int maxHealth = 50;
     private int currentHealth;
 
-    public bool isHopping;
+    public bool isShooting;
     // Make this a list in case we want more than 1 item
     public GameObject[] itemDrops;
 
@@ -32,16 +28,12 @@ public class Snake : MonoBehaviour
     private bool isFrozen = false;
     public Animator animator;
     public GameObject bullet;
-    public GameObject mouth;
-    public float hopCooldownTimer;
-    
-    public float hopDurationTimer;
-    private float shootTimer;
+    public Transform mouthFacingLeftTransform;
+    public Transform mouthFacingRightTransform;
+    private float hopCooldownTimer; // Make public to debug
+    private float hopDurationTimer; // Make public to debug
     private GameObject player;
     public int distanceFromPlayer;
-    public float shootingPeriod;
-
-    public bool isShooting = false;
     // Start is called before the first frame update
 
     [SerializeField] float _InitialVelocity;
@@ -81,15 +73,12 @@ public class Snake : MonoBehaviour
         float distance = Vector2.Distance(transform.position, player.transform.position);
         //Debug.Log(distance);
 
-        if (distance < distanceFromPlayer)
+        if (distance < distanceFromPlayer && !isPlayerTooVerticallyDistantToShootAt())
         {
-            shootTimer += Time.deltaTime;
-
-            if (shootTimer > shootingPeriod)
-            {
+            if (!isShooting) {
                 StartCoroutine(ShootWithDelay());
-                shootTimer = 0;
             }
+
         }
 
     }
@@ -142,7 +131,7 @@ public class Snake : MonoBehaviour
             {
                 bulletScript.InitializeBullet(false); // Ensure the bullet won't be destroyed on collision
             }
-            UnityEngine.Debug.Log("Item dropped");
+            Debug.Log("Item dropped");
         }
     }
 
@@ -213,25 +202,22 @@ public class Snake : MonoBehaviour
     IEnumerator CoroutineGraphVenom(GameObject venom, float v0, float _Angle, float time) {
         float t = 0;
         while (t < time) {
-            float x = v0 * t * Mathf.Cos(_Angle);
-            float y = v0 * t * Mathf.Sin(_Angle) - (1f / 2f) * -Physics.gravity.y * Mathf.Pow(t, 2);
-            venom.transform.position = new Vector3(x,y,0) + transform.position;
-
-            t+= Time.deltaTime;
-            yield return null;
+                float x = v0 * t * Mathf.Cos(_Angle);
+                float y = v0 * t * Mathf.Sin(_Angle) - (1f / 2f) * -Physics.gravity.y * Mathf.Pow(t, 2);
+                if(venom) venom.transform.position = new Vector3(x,y,0) + (spriteRenderer.flipX ? mouthFacingLeftTransform.position: mouthFacingRightTransform.position);
+                t+= Time.deltaTime;
+                yield return null;
         }
         Destroy(venom);
     }
 
     IEnumerator ShootWithDelay() {
+        animator.SetBool("isShooting", true);
         isShooting = true;
-        Stopwatch stopwatch = Stopwatch.StartNew();
         yield return new WaitForSeconds(spitWarmUpTime);
         shoot();
-        // Stop the stopwatch temporarily to log the time after the first operation
-        stopwatch.Stop();
-        UnityEngine.Debug.Log("Time after first operation: " + stopwatch.ElapsedMilliseconds + " ms");
         isShooting = false;
+        animator.SetBool("isShooting", false);
     }
     
     void shoot()
@@ -247,6 +233,12 @@ public class Snake : MonoBehaviour
         StartCoroutine(CoroutineGraphVenom(newVenom, v0, _Angle, time));
     
     }
+
+    private bool isPlayerTooVerticallyDistantToShootAt() {
+        return Math.Abs(Math.Abs(playerTransform.position.y) - Math.Abs(transform.position.y)) > _Height;
+    }
+
+
 
 
 }

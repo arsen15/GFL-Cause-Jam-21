@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4623821225432483828}
   m_Layer: 0
-  m_Name: Mouth
+  m_Name: MouthFacingRight
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,38 @@ Transform:
   m_GameObject: {fileID: 1927554930087118644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.011, y: 0.015, z: 0}
+  m_LocalPosition: {x: -0.062, y: 0.076, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7591267734540536064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2195753522929514822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7688402163281258102}
+  m_Layer: 0
+  m_Name: MouthFacingLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7688402163281258102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2195753522929514822}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.019, y: 0.103, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,9 +74,9 @@ GameObject:
   - component: {fileID: 3422584951828857137}
   - component: {fileID: 7955897137070814927}
   - component: {fileID: 1169678905808261435}
-  - component: {fileID: 2811658014940553072}
   - component: {fileID: 1646207852318567288}
-  - component: {fileID: 8974041639556778074}
+  - component: {fileID: 5526139279171076768}
+  - component: {fileID: 8234081813292602190}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Untagged
@@ -67,6 +98,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4623821225432483828}
+  - {fileID: 7688402163281258102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3422584951828857137
@@ -110,7 +142,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db8f1b7f61275e0428b58efc4f41546f, type: 3}
+  m_Sprite: {fileID: 192429676, guid: 746ad575f48ce4a60b7d825254a39ab5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -120,7 +152,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &7955897137070814927
 Rigidbody2D:
   serializedVersion: 4
@@ -183,8 +215,8 @@ BoxCollider2D:
   m_Offset: {x: 0.011742692, y: -0.0055706203}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.31, y: 0.51}
+    pivot: {x: 0.5, y: 0.75}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 0.31, y: 0.51}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -193,30 +225,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1925722, y: 0.4710061}
   m_EdgeRadius: 0
---- !u!114 &2811658014940553072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801057275676855005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d001712654ae4a941a941208f303618a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 50
-  itemDrops:
-  - {fileID: 2264893097590600737, guid: b32a52209c033884ab2723d4f82ba140, type: 3}
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  moveSpeed: 2
-  patrolDestination: 0
-  playerTransform: {fileID: 0}
-  isChasing: 0
-  chaseDistance: 5
-  freezeTime: 3
 --- !u!114 &1646207852318567288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,10 +237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: debf4e3ec2d4ed344a0592461f694cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 0
   playerHealth: {fileID: 0}
   playerMovement: {fileID: 0}
---- !u!114 &8974041639556778074
+--- !u!114 &5526139279171076768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,15 +249,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 8801057275676855005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9cef9e9334c14d7b93e000a6a79262b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e22ffcba50ea425aa101f9a91de2a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 50
+  isShooting: 0
+  itemDrops:
+  - {fileID: 2264893097590600737, guid: b32a52209c033884ab2723d4f82ba140, type: 3}
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  moveSpeed: 2
+  patrolDestination: 0
+  spitWarmUpTime: 1
+  spriteRenderer: {fileID: 3422584951828857137}
+  playerTransform: {fileID: 0}
+  freezeTime: 3
+  animator: {fileID: 8234081813292602190}
   bullet: {fileID: 9093117990103447021, guid: 8da3454bece124b5d8b1cbdb9e56f82b, type: 3}
-  mouth: {fileID: 1927554930087118644}
+  mouthFacingLeftTransform: {fileID: 7688402163281258102}
+  mouthFacingRightTransform: {fileID: 4623821225432483828}
   distanceFromPlayer: 20
-  shootingPeriod: 1
   _InitialVelocity: 0
   _Angle: 0
   _Line: {fileID: 0}
-  _Step: 0
-  _Height: 1
+  _Step: 0.1
+  _Height: 2
+  hopDurationPeriod: 0.4
+  hopCooldownPeriod: 0.4
+--- !u!95 &8234081813292602190
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801057275676855005}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07256cc7f415c42489e530f501794506, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
