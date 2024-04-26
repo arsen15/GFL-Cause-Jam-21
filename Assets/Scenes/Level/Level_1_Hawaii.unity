@@ -3275,6 +3275,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &906274505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1927554930087118644, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
+  m_PrefabInstance: {fileID: 1071338713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &921004624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4359,6 +4364,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1169678905808261435, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169678905808261435, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.5
       objectReference: {fileID: 0}
@@ -4399,9 +4408,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3422584951828857137, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422584951828857137, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1685238473, guid: 746ad575f48ce4a60b7d825254a39ab5, type: 3}
+      objectReference: {fileID: 192429676, guid: 746ad575f48ce4a60b7d825254a39ab5, type: 3}
+    - target: {fileID: 3422584951828857137, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4623821225432483828, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4412,11 +4429,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7591267734540536064, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.57
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 7591267734540536064, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.67
+      value: -5.01
       objectReference: {fileID: 0}
     - target: {fileID: 7591267734540536064, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4486,10 +4503,15 @@ PrefabInstance:
       propertyPath: distanceFromPlayer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2811658014940553072, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
+    - {fileID: 8974041639556778074, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8801057275676855005, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1280968554}
     - targetCorrespondingSourceObject: {fileID: 8801057275676855005, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1280968546}
@@ -5441,6 +5463,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1280968552 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3422584951828857137, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
+  m_PrefabInstance: {fileID: 1071338713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1280968554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280968538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e22ffcba50ea425aa101f9a91de2a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  isHopping: 1
+  itemDrops:
+  - {fileID: 2264893097590600737, guid: b32a52209c033884ab2723d4f82ba140, type: 3}
+  patrolPoints:
+  - {fileID: 990249662}
+  - {fileID: 2134750290}
+  moveSpeed: 2
+  patrolDestination: 0
+  spriteRenderer: {fileID: 1280968552}
+  playerTransform: {fileID: 227110881}
+  freezeTime: 3
+  animator: {fileID: 1280968546}
+  bullet: {fileID: 9093117990103447021, guid: 8da3454bece124b5d8b1cbdb9e56f82b, type: 3}
+  mouth: {fileID: 906274505}
+  hopCooldownTimer: 0
+  hopDurationTimer: 0
+  distanceFromPlayer: 20
+  shootingPeriod: 1
+  _InitialVelocity: 5
+  _Angle: 20
+  _Line: {fileID: 1548743427}
+  _Step: 0.1
+  _Height: 2
+  hopDuration: 0.4
+  hopCooldown: 0.4
 --- !u!1 &1285777700
 GameObject:
   m_ObjectHideFlags: 0
