@@ -30,9 +30,9 @@ public class Venom : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (snake == null) gameObject.AddComponent<Rigidbody2D>();
+        if (snake == null && !gameObject.GetComponent<Rigidbody2D>()) gameObject.AddComponent<Rigidbody2D>();
         
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+        //GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 
     }
 
