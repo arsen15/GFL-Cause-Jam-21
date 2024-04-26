@@ -76,11 +76,11 @@ public class PlayerBullet : MonoBehaviour
             boar.SetChasing(true);
         }
 
-        // Boar boar = hit.GetComponent<Boar>();
-        // if (boar != null) {
-        // 	boar.TakeDamage(damage);
-        // 	boar.SetChasing(true);
-        // } //resolve
+        Snake snake = hit.GetComponent<Snake>();
+        if (snake != null)
+        {
+            snake.TakeDamage(damage);
+        }
 
         if (
             hit.gameObject.CompareTag("Collectible Item")
