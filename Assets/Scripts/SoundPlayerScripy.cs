@@ -8,20 +8,23 @@ public class SoundPlayerScripy : MonoBehaviour
 	public bool isPLaying;
 	void Update()
 	{
-		if (Input.GetAxisRaw("Horizontal") != 0)
+		if (!PauseMenu.GameIsPaused)
 		{
-
-			if (!isPLaying)
+			if (Input.GetAxisRaw("Horizontal") != 0)
 			{
-				GetComponent<AudioSource>().Play();
 
-				isPLaying = true;
+				if (!isPLaying)
+				{
+					GetComponent<AudioSource>().Play();
+
+					isPLaying = true;
+				}
 			}
-		}
-		else
-		{
-			GetComponent<AudioSource>().Stop();
-			isPLaying = false;
+			else
+			{
+				GetComponent<AudioSource>().Stop();
+				isPLaying = false;
+			}
 		}
 	}
 }
