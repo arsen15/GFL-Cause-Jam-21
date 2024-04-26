@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level/Start_Area.unity
     guid: e700d43b452e760459c840c9c3c7af41
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level/Level_1_Hawaii.unity
     guid: add63db44376f0d488ff204df0c5b71f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level/Level_2_Japan.unity
     guid: 54e14161009197449bcdff5a33a5b633
   - enabled: 0
