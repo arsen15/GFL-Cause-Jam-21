@@ -2,10 +2,6 @@ using System.Collections;
 using System;
 using UnityEngine;
 using Unity.VisualScripting;
-public enum State {
-    Shooting,
-    Hopping
-}
 
 public class Snake : MonoBehaviour
 {
@@ -34,7 +30,7 @@ public class Snake : MonoBehaviour
     private float hopCooldownTimer; // Make public to debug
     private float hopDurationTimer; // Make public to debug
     private GameObject player;
-    public int distanceFromPlayer;
+    public int maxSpitDistance;
     // Start is called before the first frame update
 
     [SerializeField] float _InitialVelocity;
@@ -74,7 +70,7 @@ public class Snake : MonoBehaviour
         float distance = Vector2.Distance(transform.position, player.transform.position);
         //Debug.Log(distance);
 
-        if (distance < distanceFromPlayer && !isPlayerTooVerticallyDistantToShootAt())
+        if (distance < maxSpitDistance && !isPlayerTooVerticallyDistantToShootAt())
         {
             if (!isShooting) {
                 StartCoroutine(ShootWithDelay());

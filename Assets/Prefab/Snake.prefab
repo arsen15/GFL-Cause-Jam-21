@@ -141,7 +141,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 192429676, guid: 746ad575f48ce4a60b7d825254a39ab5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: debf4e3ec2d4ed344a0592461f694cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 2
   playerHealth: {fileID: 0}
   playerMovement: {fileID: 0}
 --- !u!114 &5526139279171076768
@@ -269,7 +269,7 @@ MonoBehaviour:
   bullet: {fileID: 9093117990103447021, guid: 8da3454bece124b5d8b1cbdb9e56f82b, type: 3}
   mouthFacingLeftTransform: {fileID: 7688402163281258102}
   mouthFacingRightTransform: {fileID: 4623821225432483828}
-  distanceFromPlayer: 20
+  maxSpitDistance: 20
   _InitialVelocity: 0
   _Angle: 0
   _Line: {fileID: 0}
