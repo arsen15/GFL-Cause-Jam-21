@@ -180,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 22851762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 34.84, z: 0}
+  m_LocalPosition: {x: 0, y: 35, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4369,6 +4369,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 2134750290}
+    - target: {fileID: 1646207852318567288, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1646207852318567288, guid: d9f7bf86b99ef486fab9e3861c6225f2, type: 3}
       propertyPath: playerHealth
       value: 
