@@ -44,24 +44,34 @@ public class Player : MonoBehaviour
 
 	void Update()
 	{
-		HandleMovement();
-		HandleJumping();
-		HandleShooting();
+		if (!PauseMenu.GameIsPaused)
+		{
+			HandleMovement();
+			HandleJumping();
+			HandleShooting();
+		}
+		
 	}
 
 	private void FixedUpdate()
 	{
-		HandleKnockback();
+		if (!PauseMenu.GameIsPaused)
+		{
+			HandleKnockback();
+		}
 	}
 
 	private void HandleMovement()
 	{
-		input = Input.GetAxisRaw("Horizontal");
-		animator.SetFloat("Speed", Mathf.Abs(input));
-
-		if (input < 0 && !facingRight || input > 0 && facingRight)
+		if (!PauseMenu.GameIsPaused)
 		{
-			Flip();
+			input = Input.GetAxisRaw("Horizontal");
+			animator.SetFloat("Speed", Mathf.Abs(input));
+
+			if (input < 0 && !facingRight || input > 0 && facingRight)
+			{
+				Flip();
+			}
 		}
 	}
 
@@ -100,14 +110,17 @@ public class Player : MonoBehaviour
 
 	private void HandleShooting()
 	{
-		if (Input.GetButtonDown("Fire1"))
+		if (!PauseMenu.GameIsPaused)
 		{
-			animator.SetBool("isShooting", true);
-			Shoot();
-		}
-		else if (Input.GetButtonUp("Fire1"))
-		{
-			animator.SetBool("isShooting", false);
+			if (Input.GetButtonDown("Fire1"))
+			{
+				animator.SetBool("isShooting", true);
+				Shoot();
+			}
+			else if (Input.GetButtonUp("Fire1"))
+			{
+				animator.SetBool("isShooting", false);
+			}
 		}
 	}
 

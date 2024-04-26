@@ -2123,7 +2123,7 @@ PrefabInstance:
     - target: {fileID: 2811658014940553072, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: itemDrops.Array.data[0]
       value: 
-      objectReference: {fileID: 5568251828365862156, guid: 762033a7856e263479c4bafa257cb5c3, type: 3}
+      objectReference: {fileID: 2772518836907317253, guid: 26f7417b51f0b7a42ac8083fcfeca550, type: 3}
     - target: {fileID: 2811658014940553072, guid: 1c569aed88e614e4a8565f20488c8a6c, type: 3}
       propertyPath: patrolPoints.Array.size
       value: 2
@@ -8399,7 +8399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4191126852578281792, guid: 5911f0017c8546b4dbe29bfdf382adbe, type: 3}
       propertyPath: orthographic size
-      value: 8
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4246241058204928706, guid: 5911f0017c8546b4dbe29bfdf382adbe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8407,7 +8407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246241058204928706, guid: 5911f0017c8546b4dbe29bfdf382adbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.65
+      value: -0.22999954
       objectReference: {fileID: 0}
     - target: {fileID: 4246241058204928706, guid: 5911f0017c8546b4dbe29bfdf382adbe, type: 3}
       propertyPath: m_LocalPosition.z
