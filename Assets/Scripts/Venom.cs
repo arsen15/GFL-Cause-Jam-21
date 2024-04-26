@@ -9,6 +9,7 @@ public class Venom : MonoBehaviour
     //public float bulletForce;
     public int enemyBulletDamage;
 
+    public Snake snake;
     //private float timer;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,16 @@ public class Venom : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (snake == null) gameObject.AddComponent<Rigidbody2D>();
+        
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+
     }
+
+        public void SetSnake(Snake snake) {
+            this.snake = snake;
+        }
+
 
     // Enemy bullet destroys when collides with player and player takes damage
     private void OnTriggerEnter2D(Collider2D collision)

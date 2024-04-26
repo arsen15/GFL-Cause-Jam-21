@@ -1,6 +1,7 @@
 using System.Collections;
 using System;
 using UnityEngine;
+using Unity.VisualScripting;
 public enum State {
     Shooting,
     Hopping
@@ -223,6 +224,8 @@ public class Snake : MonoBehaviour
     void shoot()
     {
         GameObject newVenom = Instantiate(bullet, transform.position, Quaternion.identity);
+        Venom venomScript = newVenom.GetComponent<Venom>();
+        if (venomScript) venomScript.SetSnake(this);
         Vector3 targetPos = new Vector3(player.transform.position.x, player.transform.position.y-1, 0) - transform.position; //cam.ScreenToWorldPoint(Input.mousePosition) - mouthPosition.position;
         targetPos.z = 0;
         float height = Mathf.Max(0.01f, targetPos.y + targetPos.magnitude / 2f);
