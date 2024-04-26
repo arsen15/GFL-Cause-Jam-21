@@ -5489,6 +5489,7 @@ MonoBehaviour:
   - {fileID: 2134750290}
   moveSpeed: 2
   patrolDestination: 0
+  spitWarmUpTime: 1
   spriteRenderer: {fileID: 1280968552}
   playerTransform: {fileID: 227110881}
   freezeTime: 3
@@ -5499,13 +5500,14 @@ MonoBehaviour:
   hopDurationTimer: 0
   distanceFromPlayer: 20
   shootingPeriod: 1
+  isShooting: 0
   _InitialVelocity: 5
   _Angle: 20
   _Line: {fileID: 1548743427}
   _Step: 0.1
   _Height: 2
-  hopDuration: 0.4
-  hopCooldown: 0.4
+  hopDurationPeriod: 0.4
+  hopCooldownPeriod: 0.4
 --- !u!1 &1285777700
 GameObject:
   m_ObjectHideFlags: 0
