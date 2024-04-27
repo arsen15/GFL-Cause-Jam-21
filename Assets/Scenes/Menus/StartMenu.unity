@@ -736,7 +736,7 @@ RectTransform:
   m_AnchorMin: {x: 0.29000002, y: 0.58437043}
   m_AnchorMax: {x: 0.716, y: 0.67651856}
   m_AnchoredPosition: {x: 1.5, y: -0.41270447}
-  m_SizeDelta: {x: 3.5219002, y: -2.9905014}
+  m_SizeDelta: {x: 50.9436, y: -2.9905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1239684450
 MonoBehaviour:
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Peguin Voyage
+  m_text: Penguin Voyage
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c35c0b97f983d449a4fdf08f69fe32e, type: 2}
   m_sharedMaterial: {fileID: -3607288198039637834, guid: 1c35c0b97f983d449a4fdf08f69fe32e, type: 2}

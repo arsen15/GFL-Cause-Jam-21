@@ -223,7 +223,6 @@ MonoBehaviour:
   knockFromRight: 0
   animator: {fileID: 4502414814356303216}
   bulletStart: {fileID: 4082831968195271859}
-  itemManager: {fileID: 0}
   jump: {fileID: 0}
 --- !u!114 &5948602636623867409
 MonoBehaviour:
