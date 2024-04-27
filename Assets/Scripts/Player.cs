@@ -18,6 +18,13 @@ public class Player : MonoBehaviour
 	public float groundCheckCircle;
 	private bool facingRight;
 
+	// Coyote Time
+	private float coyoteTime = 0.2f;
+	private float coyoteTimeCounter;
+
+	private float jumpBufferTime = 0.2f;
+	private float jumpBufferCounter;
+
 	// Knockback
 	public float knockBackForce;
 	public float knockBackCounter;
@@ -79,11 +86,32 @@ public class Player : MonoBehaviour
 	{
 		isGrounded = Physics2D.OverlapCircle(feetPos.position, groundCheckCircle, groundLayer);
 
-		if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
+        if (isGrounded)
+        {
+			coyoteTimeCounter = coyoteTime;
+        } else
 		{
-			playerRb.velocity = Vector2.up * jumpForce;
-			jump.Play();
+			coyoteTimeCounter -= Time.deltaTime;
 		}
+
+		if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+		{
+			jumpBufferCounter = jumpBufferTime;
+		} else
+		{
+			jumpBufferCounter -= Time.deltaTime;
+		}
+
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
+		{
+            //playerRb.velocity = Vector2.up * jumpForce;
+            playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
+            jump.Play();
+
+			jumpBufferCounter = 0f;
+			coyoteTimeCounter = 0f;
+		}
+
 	}
 
 	private void HandleKnockback()
