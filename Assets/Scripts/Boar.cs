@@ -28,6 +28,13 @@ public class Boar : MonoBehaviour
 
     public Animator animator;
 
+    SoundManager soundManager;
+
+    private void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,12 +60,14 @@ public class Boar : MonoBehaviour
             {
                 spriteRenderer.flipX = (true);
                 transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+                //soundManager.PlayMusic();
             }
 
             if (transform.position.x < playerTransform.position.x)
             {
                 spriteRenderer.flipX = (false);
                 transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+                //soundManager.PlayMusic();
             }
         } 
         else if (!isChasing) 
@@ -123,11 +132,13 @@ public class Boar : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        soundManager.PlaySFX(soundManager.boarHurt);
         DamagePopUpGenerator.current.CreatePopUp(transform.position, damage, Color.red);
         if ( currentHealth <= 0 )
         {
             Die();
             ItemDrop();
+            soundManager.PlaySFX(soundManager.boarHurt);
         }
     }
 

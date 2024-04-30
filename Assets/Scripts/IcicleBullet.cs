@@ -68,6 +68,20 @@ public class IcicleBullet : MonoBehaviour
 			enemy.TakeDamage(damage);
             enemy.Freez();
         }
+
+        Boar boar = collision.GetComponent<Boar>();
+        if (boar != null)
+        {
+            boar.TakeDamage(damage);
+            boar.SetChasing(true);
+        }
+
+        Snake snake = collision.GetComponent<Snake>();
+        if (snake != null)
+        {
+            snake.TakeDamage(damage);
+        }
+
         if (
         collision.gameObject.CompareTag("Collectible Item")
             || collision.gameObject.CompareTag("Enemy Bullet")
