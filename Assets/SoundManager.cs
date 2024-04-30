@@ -4,14 +4,36 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SoundManager : MonoBehaviour
 {
-	public Options options;
-	public Slider slider;
-	// Start is called before the first frame update
+	[SerializeField] Slider volumeSlider;
 
-
-	// Update is called once per frame
-	void Update()
+	void Start()
 	{
-		options.SoundAdjustment = (int)slider.value; //Idk why this isnt interactable but should in theory work 
+		if(!PlayerPrefs.HasKey("musicVolume"))
+		{
+			PlayerPrefs.SetFloat("musicVolume", 1);
+			Load();
+		}
+		
+		else
+		{
+			Load();
+		}
 	}
+	
+	public void ChangeVolume()
+	{
+		AudioListener.volume = volumeSlider.value;
+		Save();
+	}
+	
+	private void Load()
+	{
+		volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+	}
+
+	private void Save()
+	{
+		PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+	}
+
 }
