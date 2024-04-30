@@ -2938,7 +2938,6 @@ MonoBehaviour:
   points:
   - {fileID: 633302371}
   - {fileID: 1684999378}
-  i: 0
 --- !u!68 &582880575
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -3229,7 +3228,6 @@ MonoBehaviour:
   points:
   - {fileID: 1441650293}
   - {fileID: 71354155}
-  i: 0
 --- !u!68 &658194007
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -4823,7 +4821,6 @@ MonoBehaviour:
   points:
   - {fileID: 2013325615}
   - {fileID: 686338865}
-  i: 0
 --- !u!68 &862785217
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -5135,7 +5132,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -7347,7 +7344,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -8043,7 +8040,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -9734,7 +9731,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -9846,7 +9843,6 @@ MonoBehaviour:
   points:
   - {fileID: 998206581}
   - {fileID: 1955824867}
-  i: 0
 --- !u!68 &1645515010
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -10163,7 +10159,6 @@ MonoBehaviour:
   points:
   - {fileID: 1217916518}
   - {fileID: 889833340}
-  i: 0
 --- !u!68 &1685121667
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -10547,7 +10542,6 @@ MonoBehaviour:
   points:
   - {fileID: 934711584}
   - {fileID: 724355788}
-  i: 0
 --- !u!68 &1725373230
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -13541,7 +13535,6 @@ MonoBehaviour:
   points:
   - {fileID: 9126128521534040582}
   - {fileID: 5642430438835215667}
-  i: 0
 --- !u!68 &6819292944925299682
 EdgeCollider2D:
   m_ObjectHideFlags: 0
