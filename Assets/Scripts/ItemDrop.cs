@@ -13,6 +13,13 @@ public class ItemDrop : MonoBehaviour
 
     private InventoryManager inventoryManager;
 
+    SoundManager soundManager;
+
+    private void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +33,7 @@ public class ItemDrop : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            
+            soundManager.PlaySFX(soundManager.weaponPickup);
             inventoryManager.AddItem(itemType, quantity);
             Destroy(gameObject);
         }

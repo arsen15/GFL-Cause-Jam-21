@@ -44,6 +44,13 @@ public class Snake : MonoBehaviour
 
     public float hopCooldownPeriod;
 
+    SoundManager soundManager;
+
+    private void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -105,11 +112,13 @@ public class Snake : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        soundManager.PlaySFX(soundManager.snakeHiss);
         DamagePopUpGenerator.current.CreatePopUp(transform.position, damage, Color.red);
         if ( currentHealth <= 0 )
         {
             Die();
             ItemDrop();
+            soundManager.PlaySFX(soundManager.snakeHiss);
         }
     }
 
@@ -230,7 +239,9 @@ public class Snake : MonoBehaviour
         float time;
         CalculatePathWithHeight(targetPos, height, out v0, out _Angle, out time);
         StartCoroutine(CoroutineGraphVenom(newVenom, v0, _Angle, time));
-    
+
+        soundManager.PlaySFX(soundManager.snakeSpit);
+
     }
 
     private bool isPlayerTooVerticallyDistantToShootAt() {

@@ -8,6 +8,8 @@ TagManager:
   - Collectible Item
   - Coconut
   - Enemy Bullet
+  - Audio
+  - Icicle
   layers:
   - Default
   - TransparentFX
