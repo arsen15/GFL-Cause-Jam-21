@@ -7,25 +7,38 @@ public class ButtonEvents : MonoBehaviour
 {
 	public void startButtonEvent()
 	{
-		SceneManager.LoadScene(1);
+        ResetTimeScale();
+        PauseMenu.GameIsPaused = false;
+        SceneManager.LoadScene(1);
 
 	}
 	public void creditEvent()
 	{
-		SceneManager.LoadScene("Credits");
+        ResetTimeScale();
+        PauseMenu.GameIsPaused = false;
+        SceneManager.LoadScene("Credits");
 
 	}
 	public void optionsEvent()
 	{
-		SceneManager.LoadScene("Options");
+        ResetTimeScale();
+        PauseMenu.GameIsPaused = false;
+        SceneManager.LoadScene("Options");
 	}
 	public void BackToHome()
 	{
-		SceneManager.LoadScene(0);
+        ResetTimeScale();
+        PauseMenu.GameIsPaused = false;
+        SceneManager.LoadScene(0);
 	}
 
 	public void exitGame()
 	{
         Application.Quit();
     }
+
+	private void ResetTimeScale()
+	{
+		Time.timeScale = 1f;
+	}
 }
