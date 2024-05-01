@@ -10,6 +10,13 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthBar; //use slider prefab 
 
     Vector2 checkpointPos;
+
+    SoundManager soundManager;
+
+    private void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+    }
     void Start()
     {
         health = maxHealth;
@@ -27,11 +34,13 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        soundManager.PlaySFX(soundManager.playerInjured);
 
         if (health <= 0)
         {
             // Destroy(gameObject);
             respawn();
+            soundManager.PlaySFX(soundManager.playerRespawn);
         }
 
     }

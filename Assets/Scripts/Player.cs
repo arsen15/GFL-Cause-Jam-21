@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
         if (isGrounded)
         {
 			coyoteTimeCounter = coyoteTime;
+            animator.SetBool("isJumping", false);
         } else
 		{
 			coyoteTimeCounter -= Time.deltaTime;
@@ -97,15 +98,18 @@ public class Player : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
 		{
 			jumpBufferCounter = jumpBufferTime;
-		} else
+            
+        } else
 		{
 			jumpBufferCounter -= Time.deltaTime;
-		}
+            
+        }
 
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
 		{
             //playerRb.velocity = Vector2.up * jumpForce;
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
+            animator.SetBool("isJumping", true);
             jump.Play();
 
 			jumpBufferCounter = 0f;
